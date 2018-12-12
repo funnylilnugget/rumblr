@@ -1,0 +1,7 @@
+<h1><%=@user.first_name%>'s Profile</h1>
+   <p>Name: <%=@user.last_name%></p>
+   <p>Name: <%=@user.birthday%></p>
+   <p>Email: <%=@user.email%></p>
+<form class="" action="/logout" method="post">
+  <input type="submit" name="logout" value="Log Out">
+</form>

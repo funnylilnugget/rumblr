@@ -1,1 +1,14 @@
-<p>hi</p>
+<div class="container"
+<div class="row">
+  <%allblogs = @blogs.reverse%>
+  <%allblogs.each do |x|%>
+  <%=x.title%><br>
+  <%=x.content%><br>
+  <form action=<%=x.id%> method="post">
+    <input type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
+  </form>
+</li>
+<br>
+<%end%>
+</div>
+</div>

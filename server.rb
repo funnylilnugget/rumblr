@@ -29,12 +29,30 @@ end
 post "/blogs/blog" do
   @blog = Blog.new(title: params[:title], content: params[:content], user_id: params[:user_id])
   @blog.save
-  redirect "/blog/#{@blog.id}"
+  p @blog
+
+  redirect "/blogs/#{@blog.id}"
+end
+
+get "/blogs/allblogs" do
+@blogs = Blog.all
+erb :'/blogs/allblogs'
 end
 
 get "/blogs/:id" do
   @blog =  Blog.find(params["id"])
-  erb :"/blogs/allblogs"
+  erb :"/blogs/view-blog"
+end
+
+get '/blogs/?' do
+  @blogs = Blog.all
+  erb:"/blogs/allblogs"
+end
+
+post "/blogs/:id" do
+  @blog =  Blog.find(params["id"])
+  @blog.destroy
+  redirect "/blogs/"
 end
 
 # LOG IN PAGE
@@ -54,7 +72,15 @@ post '/login' do
   end
 end
 
+
+
 # LOG OUT
+
+get "/logout" do
+
+  session["user_id"] = nil
+  redirect "/"
+end
 
 post "/logout" do
 
@@ -85,4 +111,10 @@ end
 get "/users/:id" do
   @user =  User.find(params["id"])
   erb :"/users/profile"
+end
+
+post "/users/:id" do
+  @user =  User.find(params["id"])
+  @user.destroy
+  redirect "/"
 end

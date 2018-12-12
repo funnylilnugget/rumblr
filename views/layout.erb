@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+  <link href="https://unpkg.com/lemoncss/dist/lemon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blogs/blog">Post A Blog</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </nav>
 
-<%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>

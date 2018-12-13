@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
   <link href="https://unpkg.com/lemoncss/dist/lemon.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
@@ -10,9 +11,16 @@
 <body>
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/blogs/blog">Post A Blog</a></li>
+      <% if session[:user_id] == nil %>
+      <li><a href="/blogs/allblogs">Newsfeed</a></li>
+      <li><a href="/users/signup">Sign Up</a></li>
+      <li><a href="/login">Log In</a></li>
+      <% else %>
       <li><a href="/logout">Log Out</a></li>
+      <li><a href="/blogs/blog">Post A Blog</a></li>
+      <li><a href="/blogs/allblogs">View My Blogs</a></li>
+      <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
+      <% end %>
     </ul>
   </nav>
 

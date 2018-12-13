@@ -27,7 +27,7 @@ get "/blogs/blog" do
 end
 
 post "/blogs/blog" do
-  @blog = Blog.new(title: params[:title], content: params[:content], user_id: params[:user_id])
+  @blog = Blog.new(title: params[:title], content: params[:content], user_id: session[:user_id])
   @blog.save
   p @blog
 
@@ -116,5 +116,6 @@ end
 post "/users/:id" do
   @user =  User.find(params["id"])
   @user.destroy
+  session["user_id"] = nil
   redirect "/"
 end

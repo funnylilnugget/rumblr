@@ -9,7 +9,8 @@
     <p>Email: <%=@user.email%></p>
     <form class="" action="/logout" method="post">
       <input type="submit" name="logout" value="Log Out">
-      <form action=<%=@user.id%> method="post">
+      </form>
+      <form action="/users/<%= @user.id %>" method="post">
         <input type="submit" name="delete" value="Delete Profile" onclick="alert('Profile Deleted!')">
       </form>
     </div>

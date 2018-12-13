@@ -21,14 +21,12 @@
       <li><a href="/blogs/allblogs">View My Blogs</a></li>
       <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
       <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
-      <li><a href="/">Home</li>
+      <li><a href="/">Home</a></li>
+        <% end %>
+      </ul>
+    </nav>
 
-</a>
-      <% end %>
-    </ul>
-  </nav>
+    <%= yield %>
 
-  <%= yield %>
-<!-- <script src="js/main.js"></script> -->
-</body>
-</html>
+  </body>
+  </html>

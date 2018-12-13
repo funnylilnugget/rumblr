@@ -65,3 +65,8 @@ textarea {
 #button-style {
   background-color: black;
 }
+
+#blog-format {
+  background-color: rgba(104, 111, 125);
+  color: white;
+}

@@ -1,18 +1,21 @@
 <div class="container"
 <div class="row center">
-  <div class="column">
-  <%allblogs = @blogs.last(20)%>
-  <%allblogs.each do |blo|%>
-  <%if blo.user_id == session['user_id']%>
-  <% user = User.find(blo.user_id)%>
-  <%=blo.title%><br>
-  <%=blo.content%><br>
-  <h5>Posted By: <%= user.first_name %></h5>
-  <form action=<%=blo.id%> method="post">
-    <input id="button-style" type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
-  </form>
-  <%end%>
-<%end%>
-</div>
+  <div class="column" id="blog-format">
+    <%allblogs = @blogs.reverse%>
+    <%allblogs.each do |blo|%>
+    <%if blo.user_id == session['user_id']%>
+    <% user = User.find(blo.user_id)%>
+    <h3><%=blo.title%></h3>
+    <p><%=blo.content%></p><br>
+    <h5>Posted By: <%= user.first_name %></h5>
+    <form action=<%=blo.id%> method="post">
+      <input id="button-style" type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
+    </form>
+    <br>
+    <br>
+    <br>
+    <%end%>
+    <%end%>
+  </div>
 </div>
 </div>

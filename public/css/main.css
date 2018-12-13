@@ -50,3 +50,13 @@ form {
   font-family: 'Frijole', cursive;
   text-align: center;
 }
+
+.container {
+padding-top: 200px;
+text-align: center;
+min-height: 90vh;
+}
+
+textarea {
+  white-space: pre-wrap;
+}

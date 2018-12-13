@@ -20,11 +20,14 @@
       <li><a href="/blogs/blog">Post A Blog</a></li>
       <li><a href="/blogs/allblogs">View My Blogs</a></li>
       <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
+      <li><a href="/">Home</li>
+
+</a>
       <% end %>
     </ul>
   </nav>
 
   <%= yield %>
-
+<!-- <script src="js/main.js"></script> -->
 </body>
 </html>

@@ -1,17 +1,17 @@
 <div class="container"
 <div class="row center">
   <div class="column">
-  <%allblogs = @blogs.reverse%>
+  <%allblogs = @blogs.last(20)%>
   <%allblogs.each do |blo|%>
+  <%if blo.user_id == session['user_id']%>
   <% user = User.find(blo.user_id)%>
-  <%= user.first_name %><br>
   <%=blo.title%><br>
-  <%=blo.content%>
+  <%=blo.content%><br>
+  <h5>Posted By: <%= user.first_name %></h5>
   <form action=<%=blo.id%> method="post">
-    <input type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
+    <input id="button-style" type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
   </form>
-</li>
-<br>
+  <%end%>
 <%end%>
 </div>
 </div>

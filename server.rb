@@ -3,10 +3,10 @@ require 'sinatra/activerecord'
 
 enable :sessions
 
-if ENV['RACK_ENV'] == 'development'
-  set :database, {adapter: "sqlite3", database: "article.sqlite3"}
-else
+if ENV['RACK_ENV']
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+else
+  set :database, {adapter: "sqlite3", database: "article.sqlite3"}
 end
 
 
@@ -42,6 +42,11 @@ end
 get "/blogs/allblogs" do
 @blogs = Blog.all
 erb :'/blogs/allblogs'
+end
+
+get "/blogs/allusersblogs" do
+@blogs = Blog.all
+erb :'/blogs/allusersblogs'
 end
 
 get "/blogs/:id" do

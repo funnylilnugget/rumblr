@@ -1,0 +1,13 @@
+<div class="container"
+<div class="row center">
+  <div class="column">
+    <%allblogs = @blogs.reverse%>
+    <%allblogs.each do |blo|%>
+    <% user = User.find(blo.user_id)%>
+    <%= user.first_name %><br>
+    <%=blo.title%><br>
+    <%=blo.content%>
+    <%end%>
+  </div>
+</div>
+</div>

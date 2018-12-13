@@ -12,7 +12,7 @@
   <nav>
     <ul>
       <% if session[:user_id] == nil %>
-      <li><a href="/blogs/allblogs">Newsfeed</a></li>
+      <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
       <li><a href="/users/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       <% else %>
@@ -20,6 +20,7 @@
       <li><a href="/blogs/blog">Post A Blog</a></li>
       <li><a href="/blogs/allblogs">View My Blogs</a></li>
       <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
+      <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
       <li><a href="/">Home</li>
 
 </a>

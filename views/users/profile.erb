@@ -1,12 +1,12 @@
 <div class="container medium">
-    <h1 class="profile-text-header"><%=@user.first_name%>'s Profile</h1><br>
-    <p class="profile-text">Last Name: <%=@user.last_name%></p>
-    <p class="profile-text">Date of birth: <%=@user.birthday%></p>
-    <p class="profile-text">Email: <%=@user.email%></p>
-    <form class="" action="/logout" method="post">
-      <input id="button-style" type="submit" name="logout" value="Log Out">
-      </form>
-      <form action="/users/<%= @user.id %>" method="post">
-        <input id="button-style" type="submit" name="delete" value="Delete Profile" onclick="alert('Profile Deleted!')">
-      </form>
-  </div>
+  <h1 class="profile-text-header"><%=@user.first_name%>'s Profile</h1><br>
+  <p class="profile-text">Last Name: <%=@user.last_name%></p>
+  <p class="profile-text">Date of birth: <%=@user.birthday%></p>
+  <p class="profile-text">Email: <%=@user.email%></p>
+  <form class="" action="/logout" method="post">
+    <input id="button-style" type="submit" name="logout" value="Log Out">
+  </form>
+  <form action="/users/<%= @user.id %>" method="post">
+    <input id="button-style" type="submit" name="delete" value="Delete Profile" onclick="alert('Profile Deleted!')">
+  </form>
+</div>

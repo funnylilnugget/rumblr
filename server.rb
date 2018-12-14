@@ -18,11 +18,11 @@ class Blog < ActiveRecord::Base
 end
 
 get '/' do
-  p session
   erb :home
 end
 
-# BLOGS
+################ BLOGS ################
+
 
 get "/blogs/blog" do
   if session['user_id'] == nil
@@ -41,13 +41,13 @@ post "/blogs/blog" do
 end
 
 get "/blogs/allblogs" do
-@blogs = Blog.last(20)
-erb :'/blogs/allblogs'
+  @blogs = Blog.last(20)
+  erb :'/blogs/allblogs'
 end
 
 get "/blogs/allusersblogs" do
-@blogs = Blog.last(20)
-erb :'/blogs/allusersblogs'
+  @blogs = Blog.last(20)
+  erb :'/blogs/allusersblogs'
 end
 
 get "/blogs/:id" do
@@ -66,7 +66,8 @@ post "/blogs/:id" do
   redirect "/blogs/"
 end
 
-# LOG IN PAGE
+################ LOG IN PAGE ################
+
 
 get '/login' do
   erb :'/users/login'
@@ -80,12 +81,14 @@ post '/login' do
       session[:user_id] = user.id
       redirect "/users/#{user.id}"
     end
+  else
+    redirect "/login"
   end
 end
 
 
+################ LOG OUT ################
 
-# LOG OUT
 
 get "/logout" do
 
@@ -99,7 +102,9 @@ post "/logout" do
   redirect "/"
 end
 
-# SIGN UP PAGE
+
+################ SIGN UP PAGE ################
+
 
 get "/users/signup" do
   if session['user_id'] != nil
@@ -117,7 +122,9 @@ post "/users/signup" do
   redirect "/users/#{@user.id}"
 end
 
-# PROFILE
+
+################ PROFILE ################
+
 
 get "/users/:id" do
   @user =  User.find(params["id"])

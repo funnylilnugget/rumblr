@@ -1,11 +1,11 @@
 body {
-background-color: #96C3E8;
-background-image: url("/images/rugby-background.png");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;
-font-family: 'Noto Serif TC', serif;
+  background-color: #96C3E8;
+  background-image: url("/images/rugby-background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-family: 'Noto Serif TC', serif;
 }
 
 nav ul {
@@ -64,9 +64,9 @@ form {
 }
 
 .container {
-padding-top: 25px;
-text-align: center;
-width:90vw;
+  padding-top: 25px;
+  text-align: center;
+  width:90vw;
 }
 
 .w3-container {

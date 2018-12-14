@@ -14,20 +14,21 @@ nav ul {
   padding: 0;
   overflow: hidden;
   background-color: rgba(104, 111, 125, 0.75);
-  /* font-family: 'Noto Serif TC', serif; */
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px;
 }
 
 nav li a {
   display: block;
   padding: 8px 16px;
   text-decoration: none;
-  /* font-family: 'Noto Serif TC', serif; */
+  font-family: 'Noto Serif TC', serif;
 }
 
 nav li a:hover {
   background-color: #555;
   color: white;
-  /* font-family: 'Noto Serif TC', serif; */
+  font-family: 'Noto Serif TC', serif;
 }
 
 nav ul li {
@@ -46,9 +47,20 @@ form {
   font-family: 'Noto Serif TC', serif;
 }
 
-.home-font {
+.home-title {
   font-family: 'Frijole', cursive;
   text-align: center;
+  font-size: 60px;
+}
+
+.home-text {
+  font-family: 'Frijole', cursive;
+  text-align: center;
+  font-size: 40px;
+}
+
+.home-content {
+  margin-top: 200px;
 }
 
 .container {
@@ -79,4 +91,12 @@ textarea {
 .card-format {
   background-color: rgba(104, 111, 125, 0.75);
   color: white;
+}
+
+.profile-text-header {
+  font-size:40px;
+}
+
+.profile-text {
+  font-size: 20px;
 }

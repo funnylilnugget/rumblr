@@ -52,9 +52,15 @@ form {
 }
 
 .container {
-padding-top: 200px;
+padding-top: 25px;
 text-align: center;
-min-height: 90vh;
+width:90vw;
+/* min-height: 90vh; */
+/* box-shadow: none; */
+}
+
+.w3-container {
+  background-color: white;
 }
 
 textarea {
@@ -68,5 +74,10 @@ textarea {
 
 #blog-format {
   background-color: rgba(104, 111, 125);
+  color: white;
+}
+
+.card-format {
+  background-color: rgba(104, 111, 125, 0.75);
   color: white;
 }

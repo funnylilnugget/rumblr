@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
+
 enable :sessions
 
 if ENV['RACK_ENV']

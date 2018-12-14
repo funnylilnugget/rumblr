@@ -41,12 +41,12 @@ post "/blogs/blog" do
 end
 
 get "/blogs/allblogs" do
-  @blogs = Blog.last(20)
+  @blogs = Blog.all
   erb :'/blogs/allblogs'
 end
 
 get "/blogs/allusersblogs" do
-  @blogs = Blog.last(20)
+  @blogs = Blog.all
   erb :'/blogs/allusersblogs'
 end
 

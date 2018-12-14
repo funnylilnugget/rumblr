@@ -1,6 +1,7 @@
 <div class="container"
 <%allblogs = @blogs.reverse%>
 <%allblogs.each do |blo|%>
+<% next if blo.user_id == session['user_id'] %>
 <% user = User.find(blo.user_id)%>
 <div class="w3-card-4">
   <header class="w3-container card-format">

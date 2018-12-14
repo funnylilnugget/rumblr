@@ -18,7 +18,7 @@
       <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
       <li><a href="/">Home</a></li>
       <% else %>
-      <li><a href="/logout">Log Out</a></li>
+      <li><a href="/logout" onclick="alert('You have been logged out')">Log Out</a></li>
       <li><a href="/blogs/blog">Post A Blog</a></li>
       <li><a href="/blogs/allblogs">View My Blogs</a></li>
       <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>

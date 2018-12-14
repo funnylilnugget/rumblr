@@ -4,9 +4,9 @@
     <p>Date of birth: <%=@user.birthday%></p>
     <p>Email: <%=@user.email%></p>
     <form class="" action="/logout" method="post">
-      <input type="submit" name="logout" value="Log Out">
+      <input button-style type="submit" name="logout" value="Log Out">
       </form>
       <form action="/users/<%= @user.id %>" method="post">
-        <input type="submit" name="delete" value="Delete Profile" onclick="alert('Profile Deleted!')">
+        <input id="button-style" type="submit" name="delete" value="Delete Profile" onclick="alert('Profile Deleted!')">
       </form>
   </div>

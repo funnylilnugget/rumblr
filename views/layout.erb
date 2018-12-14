@@ -13,9 +13,10 @@
   <nav>
     <ul>
       <% if session[:user_id] == nil %>
-      <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
       <li><a href="/users/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
+      <li><a href="/blogs/allusersblogs">Newsfeed</a></li>
+      <li><a href="/">Home</a></li>
       <% else %>
       <li><a href="/logout">Log Out</a></li>
       <li><a href="/blogs/blog">Post A Blog</a></li>

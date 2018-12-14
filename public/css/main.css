@@ -55,8 +55,6 @@ form {
 padding-top: 25px;
 text-align: center;
 width:90vw;
-/* min-height: 90vh; */
-/* box-shadow: none; */
 }
 
 .w3-container {
@@ -70,6 +68,7 @@ textarea {
 
 #button-style {
   background-color: black;
+  border: black;
 }
 
 #blog-format {

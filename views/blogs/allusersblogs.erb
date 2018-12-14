@@ -1,13 +1,17 @@
 <div class="container"
-<div class="row center">
-  <div class="column">
     <%allblogs = @blogs.reverse%>
     <%allblogs.each do |blo|%>
     <% user = User.find(blo.user_id)%>
-    <%= user.first_name %><br>
-    <%=blo.title%><br>
+    <div class="w3-card-4">
+      <header class="w3-container card-format">
+        <h3><%=blo.title%></h3>
+        </header>
+        <div class="w3-container">
     <%=blo.content%>
-    <%end%>
-  </div>
-</div>
+      </div>
+      <footer class="w3-container card-format">
+    <h5>Posted By: <%= user.first_name %></h5>
+  </footer>
+  <br>
+  <%end%>
 </div>

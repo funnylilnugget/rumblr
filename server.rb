@@ -36,17 +36,16 @@ post "/blogs/blog" do
   @blog = Blog.new(title: params[:title], content: params[:content], user_id: session[:user_id])
   @blog.save
   p @blog
-
   redirect "/blogs/#{@blog.id}"
 end
 
 get "/blogs/allblogs" do
-  @blogs = Blog.all
+  @blogs = Blog.last(20)
   erb :'/blogs/allblogs'
 end
 
 get "/blogs/allusersblogs" do
-  @blogs = Blog.all
+  @blogs = Blog.last(20)
   erb :'/blogs/allusersblogs'
 end
 
@@ -56,7 +55,7 @@ get "/blogs/:id" do
 end
 
 get '/blogs/?' do
-  @blogs = Blog.all
+  @blogs = Blog.last(20)
   erb:"/blogs/allblogs"
 end
 

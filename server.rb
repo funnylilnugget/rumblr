@@ -36,7 +36,6 @@ post "/blogs/blog" do
   @blog = Blog.new(title: params[:title], content: params[:content], user_id: session[:user_id])
   @blog.save
   p @blog
-
   redirect "/blogs/#{@blog.id}"
 end
 

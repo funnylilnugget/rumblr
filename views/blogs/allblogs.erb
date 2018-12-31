@@ -1,6 +1,8 @@
 <div class="container">
   <%allblogs = @blogs.reverse%>
   <%allblogs.each do |blo|%>
+  <%if blo.user_id == session['user_id']%>
+  <% user = User.find(blo.user_id)%>
   <div class="w3-card-4">
     <header class="w3-container card-format">
       <h3><%=blo.title%></h3>
@@ -9,11 +11,12 @@
       <p><%=blo.content%></p><br>
     </div>
     <footer class="w3-container card-format">
+      <h5>Posted By: <%= user.first_name %></h5>
       <form action=<%=blo.id%> method="post">
         <input id="button-style" type="submit" name="delete" value="Delete Article" onclick="alert('Article Deleted!')">
       </form>
     </footer>
     <br>
-
+    <%end%>
   </div>
   <%end%>
